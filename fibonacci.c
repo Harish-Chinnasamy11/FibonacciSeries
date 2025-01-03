@@ -22,6 +22,19 @@ int * generateFibonacciSeries (int size)
     return arr;
 }
 
+int * getEvenNumbers(int * arr, int size, int count)
+{
+    int j=0;
+    int * arr1 = malloc(count * sizeof(int));
+    for(int i=0; i<size; i++)
+    {
+        if (arr[i]%2==0) {
+              arr1[j++] = arr[i];
+        }
+    }
+    return arr1;
+}
+
 int main() {
     int size;
     scanf("%d", &size);
@@ -31,6 +44,22 @@ int main() {
     {
         printf("%d ",arr[i]);
     }
+    printf("\n");
+
+    int count=0;
+    for(int i=0; i<size; i++)
+    {
+        if (arr[i]%2==0) {
+            count++;
+        }
+    }
+    
+    int* arr1 = getEvenNumbers(arr, size, count);
+    for(int i=0; i<count; i++)
+    {
+        printf("%d ",arr1[i]);
+    }
+    
 
     return 0;
 }
