@@ -55,6 +55,17 @@ int * getOddNumbers(int *arr, int size, int count)
 	return odd;
 }
 
+int nthElement(int * arr, int size)
+{
+    int n;
+    scanf("%d", &n);
+    if (n > size+1 || n < 1) {
+        return -1;
+    }
+    
+    return arr[n-1];
+}
+
 int main() {
     int size;
     scanf("%d", &size);
@@ -85,6 +96,7 @@ int main() {
         printf("%d ",odd[i]);
     }
 	printf("\nsum = %d",sumSeries(arr,size));
-	
+
+    printf("\nnth Element = %d", nthElement(arr, size));
     return 0;
 }
