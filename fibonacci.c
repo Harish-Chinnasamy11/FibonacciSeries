@@ -47,7 +47,7 @@ int * getOddNumbers(int *arr, int size, int count)
 {
 	int j=0;
 	int * odd = malloc(count * sizeof(int));
-	for(int i=0;i<size;i++)
+	for(int i=0;i<size-1;i++)
 	{
 		if(arr[i]%2!=0){
 			odd[j++]=arr[i];
