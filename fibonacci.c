@@ -43,6 +43,17 @@ int * getEvenNumbers(int * arr, int size, int count)
     return arr1;
 }
 
+int nthElement(int * arr, int size)
+{
+    int n;
+    scanf("%d", &n);
+    if (n > size+1 || n < 1) {
+        return -1;
+    }
+    
+    return arr[n-1];
+}
+
 int main() {
     int size;
     scanf("%d", &size);
@@ -69,5 +80,8 @@ int main() {
     }
     
 	printf("\nsum = %d",sumSeries(arr,size));
+	printf("\n");
+	
+    printf("\nnth Element = %d", nthElement(arr, size));
     return 0;
 }
