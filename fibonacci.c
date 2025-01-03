@@ -21,6 +21,14 @@ int * generateFibonacciSeries (int size)
     }
     return arr;
 }
+int sumSeries (int a[],int size) 
+{
+	int sum =-1;
+	for(int i=0;i<size;i++)
+		sum+=a[i];
+	return sum;
+}	
+	
 
 int main() {
     int size;
@@ -31,6 +39,6 @@ int main() {
     {
         printf("%d ",arr[i]);
     }
-
+	printf("\nsum = %d",sumSeries(arr,size));
     return 0;
 }
