@@ -21,6 +21,7 @@ int * generateFibonacciSeries (int size)
     }
     return arr;
 }
+
 int sumSeries (int a[],int size) 
 {
 	int sum = 0;
