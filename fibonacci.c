@@ -21,6 +21,14 @@ int * generateFibonacciSeries (int size)
     }
     return arr;
 }
+int sumSeries (int a[],int size) 
+{
+	int sum =-1;
+	for(int i=0;i<size;i++)
+		sum+=a[i];
+	return sum;
+}	
+	
 
 int * getEvenNumbers(int * arr, int size, int count)
 {
@@ -38,14 +46,14 @@ int * getEvenNumbers(int * arr, int size, int count)
 int main() {
     int size;
     scanf("%d", &size);
-    
+ 
     int* arr = generateFibonacciSeries(size);
     for(int i=0; i<size; i++)
     {
         printf("%d ",arr[i]);
     }
-    printf("\n");
 
+    printf("\n");
     int count=0;
     for(int i=0; i<size; i++)
     {
@@ -60,6 +68,6 @@ int main() {
         printf("%d ",arr1[i]);
     }
     
-
+	printf("\nsum = %d",sumSeries(arr,size));
     return 0;
 }
