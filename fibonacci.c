@@ -23,7 +23,7 @@ int * generateFibonacciSeries (int size)
 }
 int sumSeries (int a[],int size) 
 {
-	int sum =-1;
+	int sum = 0;
 	for(int i=0;i<size;i++)
 		sum+=a[i];
 	return sum;
@@ -41,6 +41,18 @@ int * getEvenNumbers(int * arr, int size, int count)
         }
     }
     return arr1;
+}
+int * getOddNumbers(int *arr, int size, int count)
+{
+	int j=0;
+	int * odd = malloc(count * sizeof(int));
+	for(int i=0;i<size;i++)
+	{
+		if(arr[i]%2!=0){
+			odd[j++]=arr[i];
+		}
+	}
+	return odd;
 }
 
 int nthElement(int * arr, int size)
@@ -63,25 +75,28 @@ int main() {
     {
         printf("%d ",arr[i]);
     }
-
-    printf("\n");
-    int count=0;
+    int EvenCount=0;
     for(int i=0; i<size; i++)
     {
         if (arr[i]%2==0) {
-            count++;
+            EvenCount++;
         }
     }
-    
-    int* arr1 = getEvenNumbers(arr, size, count);
-    for(int i=0; i<count; i++)
+    int* arr1 = getEvenNumbers(arr, size, EvenCount);
+    printf("\neven Series :");
+    for(int i=0; i<EvenCount; i++)
     {
         printf("%d ",arr1[i]);
     }
-    
+	printf("\nOdd Series : ");
+	int OddCount = size-EvenCount;
+    int* odd = getOddNumbers(arr, size, OddCount);
+    for(int i=0; i<OddCount; i++)
+    {
+        printf("%d ",odd[i]);
+    }
 	printf("\nsum = %d",sumSeries(arr,size));
-	printf("\n");
-	
+
     printf("\nnth Element = %d", nthElement(arr, size));
     return 0;
 }
