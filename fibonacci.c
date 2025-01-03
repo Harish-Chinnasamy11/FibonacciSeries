@@ -67,6 +67,11 @@ int nthElement(int * arr, int size)
     return arr[n-1];
 }
 
+int getMaxValue(int * arr, int size)
+{
+    return arr[size - 1];
+}
+
 int main() {
     int size;
     scanf("%d", &size);
