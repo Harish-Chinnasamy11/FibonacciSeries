@@ -16,7 +16,7 @@ int * generateFibonacciSeries (int size)
         arr[1] = 1;
         for(int i=2; i<size; i++)
         {
-            arr[i] = arr[i - 1] + arr[i - 1];
+            arr[i] = arr[i - 1] + arr[i - 2];
         }
     }
     return arr;
